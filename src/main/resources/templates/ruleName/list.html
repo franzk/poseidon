@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Poseidon - Rules</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	<div th:insert="header.html"></div>
+	<div class="row"><h2>Rule List</h2></div>
+	<div class="row">
+		<a href="/ruleName/add" class="btn btn-primary btn-sm">Add New</a>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>json</th>
+					<th>template</th>
+					<th>sql</th>
+					<th>sqlPart</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ruleName: ${ruleNames}" >
+					<td th:text="${ruleName.getId()}" />
+					<td th:text="${ruleName.getName()}" />
+					<td th:text="${ruleName.getDescription()}" />
+					<td th:text="${ruleName.getJson()}" />
+					<td th:text="${ruleName.getTemplate()}" />
+					<td th:text="${ruleName.getSqlStr()}" />
+					<td th:text="${ruleName.getSqlPart()}" />
+					<td>
+						<a th:href="@{/ruleName/update/{id}(id=${ruleName.getId()})}" class="btn btn-primary btn-sm">Edit</a>
+						<a th:href="@{/ruleName/delete/{id}(id=${ruleName.getId()})}" class="btn btn-danger btn-sm">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

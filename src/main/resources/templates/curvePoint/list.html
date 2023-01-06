@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Poseidon - Curve Points</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	<header th:insert="~{header.html}"></header>
+	<div class="row"><h2>Curve Point List</h2></div>
+	<div class="row">
+		<a href="/curvePoint/add" class="btn btn-primary btn-sm">Add New</a>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>CurveId</th>
+					<th>Term</th>
+					<th>Value</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="curvePoint: ${curvePoints}">
+					<td th:text="${curvePoint.getId()}" />
+					<td th:text="${curvePoint.getCurveId()}" />
+					<td th:text="${curvePoint.getTerm()}" />
+					<td th:text="${curvePoint.getValue()}" />
+					<td>
+						<a th:href="@{/curvePoint/update/{id}(id=${curvePoint.getId()})}" class="btn btn-primary btn-sm">Edit</a>
+						<a th:href="@{/curvePoint/delete/{id}(id=${curvePoint.getId()})}" class="btn btn-danger btn-sm">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

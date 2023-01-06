@@ -1,0 +1,40 @@
+<div class="form-group">
+    <label for="fullname" class="col-sm-2 control-label">
+        <span th:text="#{user.fullname.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="text" th:field="*{fullname}" id="fullname" th:placeholder="#{user.fullname.placeholder}" class="col-4">
+        <p class="text-danger" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}" ></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="username" class="col-sm-2 control-label">
+        <span th:text="#{user.username.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="text" th:field="*{username}" id="username" th:placeholder="#{user.username.placeholder}" class="col-4">
+        <p class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="password" class="col-sm-2 control-label">
+        <span th:text="#{user.password.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="password" th:field="*{password}" id="password" th:placeholder="#{user.password.placeholder}" class="col-4">
+        <p class="text-danger mb-0" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label">
+        <span th:text="#{user.role.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <label class="checkbox-inline"><input type="radio" th:field="*{role}" th:value="ADMIN">Admin</label>
+        <label class="checkbox-inline"><input type="radio" th:field="*{role}" th:value="USER">User</label>
+        <p class="text-danger" th:if="${#fields.hasErrors('role')}" th:errors="*{role}"></p>
+    </div>
+</div>

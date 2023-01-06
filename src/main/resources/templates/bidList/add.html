@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Poseidon - Bid List</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+
+	<div class="row">
+		<h2>Add New Bid</h2>
+	</div>
+
+	<div class="row">
+		<form action="#" th:action="@{/bidList/validate}" th:object="${bidList}" method="post" class="form-horizontal" style="width: 100%">
+
+			<div th:insert="~{bidlist/form_fields.html}"></div>
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<a href="/bidList/list" id="cancelButton" class="btn btn-danger" th:text="#{button.cancel}" />
+					<input type="submit" class="btn btn-primary" th:value="#{button.bidList.add}" />
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+</div>
+</body>
+</html>

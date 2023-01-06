@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Poseidon - Trades</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	<div th:insert="header.html"></div>
+	<div class="row"><h2>Trade List</h2></div>
+	<div class="row">
+		<a href="/trade/add" class="btn btn-primary btn-sm">Add New</a>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Account</th>
+					<th>Type</th>
+					<th>Buy Quantity</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="trade: ${trades}" >
+					<td th:text="${trade.getTradeId()}" />
+					<td th:text="${trade.getAccount()}" />
+					<td th:text="${trade.getType()}" />
+					<td th:text="${trade.getBuyQuantity()}" />
+					<td>
+						<a th:href="@{/trade/update/{id}(id=${trade.getTradeId()})}" class="btn btn-primary btn-sm">Edit</a>
+						<a th:href="@{/trade/delete/{id}(id=${trade.getTradeId()})}" class="btn btn-danger btn-sm">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

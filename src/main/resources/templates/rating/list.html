@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Poseidon - Ratings</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	<div th:insert="header.html"></div>	<div class="row"><h2>Rating List</h2></div>
+	<div class="row">
+		<a href="/rating/add" class="btn btn-primary btn-sm">Add New</a>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>MoodysRating</th>
+					<th>SandPRating</th>
+					<th>FitchRating</th>
+					<th>Order</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="rating: ${ratings}">
+					<td th:text="${rating.getId()}" />
+					<td th:text="${rating.getMoodysRating()}" />
+					<td th:text="${rating.getSandPRating()}" />
+					<td th:text="${rating.getFitchRating()}" />
+					<td th:text="${rating.getOrderNumber()}" />
+					<td>
+						<a th:href="@{/rating/update/{id}(id=${rating.getId()})}" class="btn btn-primary btn-sm">Edit</a>
+						<a th:href="@{/rating/delete/{id}(id=${rating.getId()})}" class="btn btn-danger btn-sm">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

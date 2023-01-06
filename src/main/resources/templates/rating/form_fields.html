@@ -1,0 +1,39 @@
+<div class="form-group">
+  <label th:for="moodysRating" class="col-sm-2 control-label" >
+    <p th:text="#{rating.moodysRating.placeholder}" />
+  </label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="moodysRating" th:placeholder="#{rating.moodysRating.placeholder}" th:field="*{moodysRating}" />
+    <p th:if="${#fields.hasErrors('moodysRating')}" th:errors="*{moodysRating}"  class="text-danger"></p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label th:for="sandPRating" class="col-sm-2 control-label" >
+    <p th:text="#{rating.sandPRating.placeholder}" />
+  </label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="sandPRating" th:placeholder="#{rating.sandPRating.placeholder}" th:field="*{sandPRating}" />
+    <p th:if="${#fields.hasErrors('sandPRating')}" th:errors="*{sandPRating}" class="text-danger"></p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label th:for="fitchRating" class="col-sm-2 control-label" >
+    <p th:text="#{rating.fitchRating.placeholder}" />
+  </label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="fitchRating" th:placeholder="#{rating.fitchRating.placeholder}" th:field="*{fitchRating}" />
+    <p th:if="${#fields.hasErrors('fitchRating')}" th:errors="*{fitchRating}" class="text-danger"></p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label th:for="orderNumber" class="col-sm-2 control-label" >
+    <p th:text="#{rating.orderNumber.placeholder}" />
+  </label>
+  <div class="col-sm-10">
+    <input type="number" class="form-control" id="orderNumber" th:placeholder="#{rating.orderNumber.placeholder}" th:field="*{orderNumber}" />
+    <p th:if="${#fields.hasErrors('orderNumber')}" th:errors="*{orderNumber}" class="text-danger"></p>
+  </div>
+</div>

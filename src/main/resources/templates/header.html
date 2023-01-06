@@ -1,0 +1,15 @@
+<div class="row header pt-2">
+  <navbar class="col-6">
+    <a href="/bidList/list">Bid Lists</a>&nbsp;|&nbsp;
+    <a href="/curvePoint/list">Curve Points</a>&nbsp;|&nbsp;
+    <a href="/rating/list">Ratings</a>&nbsp;|&nbsp;
+    <a href="/trade/list">Trades</a>&nbsp;|&nbsp;
+    <a href="/ruleName/list">Rules</a>
+    <a th:if="${loggedUser.isAdmin()}" href="/user/list">&nbsp;|&nbsp;Users</a>
+  </navbar>
+  <div class="col-6 text-right">
+    Logged user : <span th:text="${loggedUser.getName()}" class="font-weight-bold"></span>&nbsp;|&nbsp;
+    <a href="/app-logout">Logout</a>
+  </div>
+</div>
+<hr>

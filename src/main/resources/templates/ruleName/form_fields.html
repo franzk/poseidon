@@ -1,0 +1,59 @@
+<div class="form-group">
+    <label th:for="name" class="col-sm-2 control-label" >
+        <p th:text="#{ruleName.name.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" th:placeholder="#{ruleName.name.placeholder}" th:field="*{name}" />
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"  class="text-danger"></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <label th:for="description" class="col-sm-2 control-label" >
+        <p th:text="#{ruleName.description.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="description" th:placeholder="#{ruleName.description.placeholder}" th:field="*{description}" />
+        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"  class="text-danger"></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <label th:for="json" class="col-sm-2 control-label" >
+        <p th:text="#{ruleName.json.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="json" th:placeholder="#{ruleName.json.placeholder}" th:field="*{json}" />
+        <p th:if="${#fields.hasErrors('json')}" th:errors="*{json}"  class="text-danger"></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <label th:for="template" class="col-sm-2 control-label" >
+        <p th:text="#{ruleName.template.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="template" th:placeholder="#{ruleName.template.placeholder}" th:field="*{template}" />
+        <p th:if="${#fields.hasErrors('template')}" th:errors="*{template}"  class="text-danger"></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <label th:for="sqlStr" class="col-sm-2 control-label" >
+        <p th:text="#{ruleName.sqlStr.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="sqlStr" th:placeholder="#{ruleName.sqlStr.placeholder}" th:field="*{sqlStr}" />
+        <p th:if="${#fields.hasErrors('sqlStr')}" th:errors="*{sqlStr}"  class="text-danger"></p>
+    </div>
+</div>
+
+<div class="form-group">
+    <label th:for="sqlPart" class="col-sm-2 control-label" >
+        <p th:text="#{ruleName.sqlPart.placeholder}" />
+    </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="sqlPart" th:placeholder="#{ruleName.sqlPart.placeholder}" th:field="*{sqlPart}" />
+        <p th:if="${#fields.hasErrors('sqlPart')}" th:errors="*{sqlPart}" class="text-danger"></p>
+    </div>
+</div>

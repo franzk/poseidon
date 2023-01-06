@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+<meta charset="utf-8"/>
+<title>Poseidon - Bid Lists</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+</head>
+<body>
+<div class="container">
+	<header th:insert="~{header.html}"></header>
+
+	<div class="row"><h2>BidLists</h2></div>
+	<div class="row">
+		<a href="/bidList/add" class="btn btn-primary btn-sm">Add New</a>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Account</th>
+					<th>Type</th>
+					<th>Bid Quantity</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="bidList: ${bidLists}">
+					<td th:text="${bidList.getBidListId()}" />
+					<td th:text="${bidList.getAccount()}" />
+					<td th:text="${bidList.getType()}" />
+					<td th:text="${bidList.getBidQuantity()}" />
+					<td>
+						<a th:href="@{/bidList/update/{id}(id=${bidList.getBidListId()})}" class="btn btn-primary btn-sm">Edit</a>
+						<a th:href="@{/bidList/delete/{id}(id=${bidList.getBidListId()})}" class="btn btn-danger btn-sm">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>
